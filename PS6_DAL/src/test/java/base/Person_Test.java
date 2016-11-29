@@ -63,7 +63,9 @@ public class Person_Test {
 	
 	@Test
 	public void deleteTest() {
+		assertEquals(PersonDAL.getPerson(person1UUID).getPersonID(), person1UUID);
 		PersonDAL.deletePerson(person1UUID);
+		assertNull(PersonDAL.getPerson(person1UUID));
 	}
 	
 	@Test
